@@ -1,11 +1,12 @@
-# Проект FitLife - MVP версия 1.0
+import sys
 from datetime import datetime
+
 # Попросил нейросеть название модуля и функцию для определения времени
 
-import sys
 # Попросил нейросеть подсказать как исправить ошибки связанные с UTF-8,
 # при использовании pytest
 # Принудительно используем UTF-8 для stdout и stderr
+
 if sys.stdout.encoding != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
 if sys.stderr.encoding != "utf-8":
@@ -67,7 +68,7 @@ user_height = float(input(
 # Формула ИМТ: вес разделить на (рост в квадрате)
 bmi = user_weight / (user_height ** 2)
 bmi = round(bmi, 1)
-# Рассчитай bmi (Индекс массы тела)
+
 # Подсчет воды: вес * 30 мл
 # Рассчитай water_l
 water_ml = user_weight * WATER_PER_KG
@@ -75,9 +76,6 @@ water_l = water_ml / WATER_LIRER_ML
 
 
 # 4. Вывод красивого результата
-# Используй f-строку, чтобы вывести приветствие,
-# например: "Привет, Иван!"
-# Выведи возраст, ИМТ (округленный до 1 знака) и норму воды.
 print()
 print(f'Отчет для пользователя: {user_name} ({user_age} {age_word})')
 print(f'Твой Индекс Массы Тела: {bmi}')
